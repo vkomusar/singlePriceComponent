@@ -1,0 +1,321 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Karla'; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+.heading {
+  font-weight: 700; }
+  .headingPrimary {
+    color: #41a99d;
+    font-size: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .headingPrimary {
+        font-size: 3rem; } }
+  .headingSecondary {
+    color: #bfdf32;
+    font-size: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .headingSecondary {
+        font-size: 2.5rem; } }
+  .heading--white {
+    color: #ffffff; }
+
+.paragraph {
+  font-weight: lighter;
+  font-size: 1.5rem;
+  line-height: 1.5; }
+  @media only screen and (max-width: 37.5em) {
+    .paragraph {
+      font-size: 2rem;
+      line-height: 1.8; } }
+  @media only screen and (max-width: 56.25em) {
+    .paragraph {
+      font-size: 2rem;
+      line-height: 1.8; } }
+  @media only screen and (max-width: 75em) {
+    .paragraph {
+      font-size: 2rem;
+      line-height: 1.8; } }
+  .paragraph--white {
+    color: #ffffff; }
+  .paragraph--grey {
+    color: #C0C1C6; }
+  .paragraphPrice {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 60px;
+    color: #ffffff; }
+    @media only screen and (max-width: 37.5em) {
+      .paragraphPrice {
+        font-size: 1.8rem; } }
+    .paragraphPrice--number {
+      font-size: 3rem;
+      margin-right: 1rem; }
+      @media only screen and (max-width: 37.5em) {
+        .paragraphPrice--number {
+          font-size: 4.5rem; } }
+    .paragraphPrice--white {
+      color: #ffffff; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1rem !important; }
+  @media only screen and (max-width: 37.5em) {
+    .u-margin-bottom-small {
+      margin-bottom: 1.5rem !important; } }
+
+.u-margin-bottom-medium {
+  margin-bottom: 1.5rem !important; }
+  @media only screen and (max-width: 37.5em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 2rem !important; } }
+
+.u-margin-bottom-big {
+  margin-bottom: 2.5rem !important; }
+  @media only screen and (max-width: 37.5em) {
+    .u-margin-bottom-big {
+      margin-bottom: 3.5rem !important; } }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.opacityNormal {
+  opacity: 1; }
+
+.opacityMedium {
+  opacity: .7; }
+
+.opacitySmall {
+  opacity: .5; }
+
+.price {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #e5eff5;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 37.5em) {
+    .price {
+      height: auto; } }
+  .priceWrapper {
+    width: 800px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; }
+  .priceTop {
+    width: 100%;
+    height: 45%; }
+    .priceTopContent {
+      padding: 4.5rem 8rem 4.5rem 4rem; }
+      @media only screen and (max-width: 37.5em) {
+        .priceTopContent {
+          padding: 4.5rem 4rem 4.5rem 4rem; } }
+  .priceHalves {
+    width: 100%;
+    height: 55%;
+    display: flex; }
+    @media only screen and (max-width: 37.5em) {
+      .priceHalves {
+        flex-direction: column; } }
+    .priceHalves--left {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      background-color: #4abebd;
+      border-bottom-left-radius: 10px;
+      padding: 4rem 6rem 6rem 4rem;
+      pointer-events: none;
+      transition: background-color .25s ease-in-out; }
+      @media only screen and (max-width: 37.5em) {
+        .priceHalves--left {
+          width: 100%;
+          border-radius: 0px;
+          padding: 3rem 4rem 4rem 3rem; } }
+      .priceHalves--left:hover {
+        background-color: #41a99d; }
+      .priceHalves--left > .priceBtn {
+        pointer-events: auto; }
+    .priceHalves--right {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      background-color: #4abebd;
+      border-bottom-right-radius: 10px;
+      padding: 4rem 6rem 6rem 4rem; }
+      @media only screen and (max-width: 37.5em) {
+        .priceHalves--right {
+          width: 100%;
+          border-radius: 0px;
+          padding: 3rem 4rem 4rem 3rem; } }
+  .price .paragraphPrice {
+    display: flex;
+    height: 60px; }
+    @media only screen and (max-width: 37.5em) {
+      .price .paragraphPrice {
+        height: 50px; } }
+  .priceBtn {
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #bfdf32;
+    border: none;
+    padding: 1.5rem 3rem;
+    margin-top: 3rem;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer; }
+    @media only screen and (max-width: 56.25em) {
+      .priceBtn {
+        max-width: 180px; } }
+    @media only screen and (max-width: 37.5em) {
+      .priceBtn {
+        max-width: 300px; } }
+    .priceBtn:focus, .priceBtn:active {
+      outline: none;
+      box-shadow: none;
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15), 0 3px 5px 0 rgba(0, 0, 0, 0.15); }
+  .priceList {
+    margin-top: 1rem;
+    list-style: none; }
+    .priceList > li {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.4;
+      opacity: .7; }
+      @media only screen and (max-width: 75em) {
+        .priceList > li {
+          font-size: 1.6rem;
+          line-height: 1.6; } }
+      @media only screen and (max-width: 56.25em) {
+        .priceList > li {
+          font-size: 1.6rem;
+          line-height: 1.6; } }
+      @media only screen and (max-width: 37.5em) {
+        .priceList > li {
+          font-size: 2rem;
+          line-height: 1.6; } }
+
+.container {
+  max-width: 128rem;
+  margin: 8rem auto; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.header {
+  text-align: center; }

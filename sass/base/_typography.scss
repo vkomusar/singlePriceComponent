@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+
+.heading{
+
+    font-weight: 700;
+
+    &Primary{
+        color: $color-primary;        
+        font-size: 3rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    &Secondary{
+        color: $color-secondary;
+        font-size: 2rem;
+
+        @include respond(phone) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &--white {
+        color: $color-white;
+    }
+}
+
+.paragraph {
+    
+    font-weight: lighter;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    @include respond(phone) {
+        font-size: 2rem;
+        line-height:1.8;
+    }
+
+    @include respond(tab-port) {
+        font-size: 2rem;
+        line-height:1.8;
+    }
+
+    @include respond(tab-land) {
+        font-size: 2rem;
+        line-height:1.8;
+    }
+
+    &--white{
+        color: $color-white;
+    }
+
+    &--grey {
+        color: $color-grey;
+    }
+
+    &Price {
+
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 60px;
+        color: $color-white;
+
+        @include respond(phone) {
+            font-size: 1.8rem;
+        }
+        
+        &--number {
+
+            font-size: 3rem;
+            margin-right: 1rem;
+
+            @include respond(phone) {
+               font-size: 4.5rem;
+             }
+
+        }
+
+        &--white {
+            color: $color-white;
+        }
+    }
+}
