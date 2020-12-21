@@ -84,7 +84,7 @@ body {
     @media only screen and (max-width: 37.5em) {
       .headingSecondary {
         font-size: 2.5rem; } }
-  .heading--white {
+  .heading--White {
     color: #ffffff; }
 
 .paragraph {
@@ -103,9 +103,9 @@ body {
     .paragraph {
       font-size: 2rem;
       line-height: 1.8; } }
-  .paragraph--white {
+  .paragraph--White {
     color: #ffffff; }
-  .paragraph--grey {
+  .paragraph--Grey {
     color: #C0C1C6; }
   .paragraphPrice {
     font-size: 1.5rem;
@@ -115,50 +115,42 @@ body {
     @media only screen and (max-width: 37.5em) {
       .paragraphPrice {
         font-size: 1.8rem; } }
-    .paragraphPrice--number {
+    .paragraphPrice--Number {
       font-size: 3rem;
       margin-right: 1rem; }
       @media only screen and (max-width: 37.5em) {
-        .paragraphPrice--number {
+        .paragraphPrice--Number {
           font-size: 4.5rem; } }
-    .paragraphPrice--white {
+    .paragraphPrice--White {
       color: #ffffff; }
 
-.u-center-text {
+.uText--Center {
   text-align: center !important; }
 
-.u-margin-bottom-small {
+.uMarginBottom--Small {
   margin-bottom: 1rem !important; }
   @media only screen and (max-width: 37.5em) {
-    .u-margin-bottom-small {
+    .uMarginBottom--Small {
       margin-bottom: 1.5rem !important; } }
 
-.u-margin-bottom-medium {
+.uMarginBottom--Medium {
   margin-bottom: 1.5rem !important; }
   @media only screen and (max-width: 37.5em) {
-    .u-margin-bottom-medium {
+    .uMarginBottom--Medium {
       margin-bottom: 2rem !important; } }
 
-.u-margin-bottom-big {
+.uMarginBottom--Big {
   margin-bottom: 2.5rem !important; }
   @media only screen and (max-width: 37.5em) {
-    .u-margin-bottom-big {
+    .uMarginBottom--Big {
       margin-bottom: 3.5rem !important; } }
 
-.u-margin-top-big {
-  margin-top: 8rem !important; }
-
-.u-margin-top-huge {
-  margin-top: 10rem !important; }
-
-.opacityNormal {
+.uOpacity {
   opacity: 1; }
-
-.opacityMedium {
-  opacity: .7; }
-
-.opacitySmall {
-  opacity: .5; }
+  .uOpacity--Medium {
+    opacity: .7; }
+  .uOpacity--Small {
+    opacity: .5; }
 
 .price {
   margin: 0;
@@ -194,7 +186,7 @@ body {
     @media only screen and (max-width: 37.5em) {
       .priceHalves {
         flex-direction: column; } }
-    .priceHalves--left {
+    .priceHalves--Left {
       display: flex;
       flex-direction: column;
       width: 50%;
@@ -204,15 +196,15 @@ body {
       pointer-events: none;
       transition: background-color .25s ease-in-out; }
       @media only screen and (max-width: 37.5em) {
-        .priceHalves--left {
+        .priceHalves--Left {
           width: 100%;
           border-radius: 0px;
           padding: 3rem 4rem 4rem 3rem; } }
-      .priceHalves--left:hover {
+      .priceHalves--Left:hover {
         background-color: #41a99d; }
-      .priceHalves--left > .priceBtn {
+      .priceHalves--Left > .priceBtn {
         pointer-events: auto; }
-    .priceHalves--right {
+    .priceHalves--Right {
       display: flex;
       flex-direction: column;
       width: 50%;
@@ -220,7 +212,7 @@ body {
       border-bottom-right-radius: 10px;
       padding: 4rem 6rem 6rem 4rem; }
       @media only screen and (max-width: 37.5em) {
-        .priceHalves--right {
+        .priceHalves--Right {
           width: 100%;
           border-radius: 0px;
           padding: 3rem 4rem 4rem 3rem; } }
@@ -316,6 +308,3 @@ body {
     width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
-
-.header {
-  text-align: center; }
